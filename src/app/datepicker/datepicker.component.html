@@ -1,0 +1,16 @@
+<p>datepicker works!</p>
+<p (click)="clear()">Clear</p>
+<p class="bg">
+  <mat-form-field color="accent" appearance="outline">
+    <!--<mat-label>Inherited calendar color</mat-label>-->
+    <input matInput [matDatepicker]="picker" placeholder="YYYY.MM.DD"
+      [formControl]="date"
+      (dateInput)="inputDate($event)" (dateChange)="changeDate($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker touchUi [startAt]="startDate" color="primary"></mat-datepicker>
+  </mat-form-field>
+</p>
+<p>{{comment}}</p>
+<div class="example-events">
+  <div *ngFor="let e of events">{{e}}</div>
+</div>
