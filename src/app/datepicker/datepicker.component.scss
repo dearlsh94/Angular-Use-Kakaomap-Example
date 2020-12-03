@@ -1,0 +1,40 @@
+.bg {
+  background-color: burlywood;
+}
+
+mat-form-field {
+  color: black;
+  margin-right: 12px;
+}
+
+mat-datepicker-toggle {
+  color: grey;
+  background-color: white;
+  fill: grey;
+}
+mat-datepicker-toggle:hover {
+  color: blue;
+  background-color: white;
+  fill: grey;
+}
+mat-datepicker-toggle:active {
+  color: blue;
+  background-color: white;
+  fill: grey;
+}
+
+mat-datepicker {
+  color: grey;
+  fill: grey;
+  background-color: grey;
+}
+mat-datepicker:hover {
+  color: blue;
+  fill: blue;
+  background-color: blue;
+}
+mat-datepicker:active {
+  color: blue;
+  fill: blue;
+  background-color: blue;
+}

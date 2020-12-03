@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
+## Install Package
+```bash
+$ng add @angular/material
+$npm i @angular/cdk @angular/animations
+```
+
+## Kakao API Documents
+- [Kakao MAP API](https://apis.map.kakao.com/web/)
+- [Kakao Developer](https://developers.kakao.com/)
+- [Kakao Developer Forum](https://devtalk.kakao.com/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
