@@ -1,4 +1,18 @@
 <p>kakaomap works!</p>
-<div id="map" style="background-color:turquoise; width:500px; height:400px;"></div>
+<!--
+  <div id="map" style="background-color:turquoise; width:500px; height:400px;"></div>
+-->
+최초 키워드 : {{nowKeyword}}
 <div id="clickLatlng"></div>
-<div id="viewAddress"></div>
+<div id="clickMarker"></div>
+<div id="viewAddress" style="height: 50px;"></div>
+<p>
+  <input type="hidden" value="{{nowKeyword}}" id="keyword" size="15"> 
+</p>
+<div class="map_wrap">
+  <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+</div>
+<ul id="placesList"></ul>
+<!--
+<div id="pagination"></div>
+-->
