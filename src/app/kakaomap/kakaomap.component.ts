@@ -53,8 +53,8 @@ export class KakaomapComponent implements OnInit {
       marker.setPosition(latlng);
       
       // 경/위도 출력
-      var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-      message += '경도는 ' + latlng.getLng() + ' 입니다';
+      var message = '위도 : ' + latlng.getLat() + ' / ';
+      message += '경도 : ' + latlng.getLng() + '';
       
       var resultDiv = document.getElementById('clickLatlng'); 
       resultDiv.innerHTML = message;
@@ -69,26 +69,28 @@ export class KakaomapComponent implements OnInit {
     // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
     kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
       searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-          if (status === kakao.maps.services.Status.OK) {
-              var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-              detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-              
-              var content = '<div class="bAddr">' +
-                              '<span class="title">법정동 주소정보</span>' + 
-                              detailAddr + 
-                          '</div>';
+        if (status === kakao.maps.services.Status.OK) {
+          console.log(result[0]);
 
-              // 마커를 클릭한 위치에 표시합니다 
-              marker.setPosition(mouseEvent.latLng);
-              marker.setMap(map);
+          var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+          detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+          
+          var content = '<div class="bAddr">' +
+                          '<span class="title">법정동 주소정보</span>' + 
+                          detailAddr + 
+                        '</div>';
 
-              // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-              // infowindow.setContent(content);
-              // infowindow.open(map, marker);
-              var resultDiv = document.getElementById('viewAddress'); 
-              resultDiv.innerHTML = content;
+          // 마커를 클릭한 위치에 표시합니다 
+          marker.setPosition(mouseEvent.latLng);
+          marker.setMap(map);
 
-          }   
+          // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+          // infowindow.setContent(content);
+          // infowindow.open(map, marker);
+          var resultDiv = document.getElementById('viewAddress'); 
+          resultDiv.innerHTML = content;
+
+        }   
       });
     });
 
